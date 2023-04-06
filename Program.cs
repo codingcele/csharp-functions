@@ -8,19 +8,24 @@ namespace Snacks
     {
         static void Main(string[] args)
         {
-            int[] numeri = { 2, 6, 7, 5, 3, 9 };
+            Console.WriteLine("Inserisci un numero:");
+            int numero = int.Parse(Console.ReadLine());
+            int[] userArray = new int[numero];
 
-            StampaArray(numeri);
+            for (int i = 0; i < numero; i++)
+            {
+                Console.WriteLine($"Inserisci il {i + 1}° numero: ");
+                int num = int.Parse(Console.ReadLine());
+                userArray[i] = num;
+            }
 
-            int num = 9;
+            StampaArray(userArray);
 
-            Quadrato(num);
+            ElevaArrayAlQuadrato(userArray);
 
-            ElevaArrayAlQuadrato(numeri);
+            int[] quadrati = ElevaArrayAlQuadrato(userArray);
 
-            int[] quadrati = ElevaArrayAlQuadrato(numeri);
-
-            SommaElementiArray(numeri);
+            SommaElementiArray(userArray);
 
             SommaElementiArray(quadrati);
         }
