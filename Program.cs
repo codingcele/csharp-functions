@@ -9,11 +9,13 @@ namespace Snacks
         static void Main(string[] args)
         {
             int[] numeri = { 1, 2, 3, 4, 5, 12, 17, 11, 28, 10 };
-            StampaArray(numeri);
+            //StampaArray(numeri);
 
-            int num = 9;
+            //int num = 9;
 
-            Quadrato(num);
+            //Quadrato(num);
+
+            ElevaArrayAlQuadrato(numeri);
         }
 
         static void StampaArray(int[] array)
@@ -32,6 +34,18 @@ namespace Snacks
         {
             Console.WriteLine(numero * numero);
             return numero * numero;
+        }
+
+        static int[] ElevaArrayAlQuadrato(int[] array)
+        {
+            int[] copiaArray = (int[])array.Clone();
+            for (int i = 0; i < copiaArray.Length; i++)
+            {
+                copiaArray[i] = copiaArray[i] * copiaArray[i];
+            }
+            StampaArray(copiaArray);
+            StampaArray(array);
+            return copiaArray;
         }
     }
 }
