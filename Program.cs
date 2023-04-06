@@ -10,6 +10,10 @@ namespace Snacks
         {
             int[] numeri = { 1, 2, 3, 4, 5, 12, 17, 11, 28, 10 };
             StampaArray(numeri);
+
+            int num = 9;
+
+            Quadrato(num);
         }
 
         static void StampaArray(int[] array)
@@ -22,6 +26,12 @@ namespace Snacks
                     Console.Write(", ");
             }
             Console.Write("]");
+        }
+
+        static int Quadrato(int numero)
+        {
+            Console.WriteLine(numero * numero);
+            return numero * numero;
         }
     }
 }
