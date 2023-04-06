@@ -8,16 +8,21 @@ namespace Snacks
     {
         static void Main(string[] args)
         {
-            int[] numeri = { 1, 2, 3, 4, 5, 12, 17, 11, 28, 10 };
-            //StampaArray(numeri);
+            int[] numeri = { 2, 6, 7, 5, 3, 9 };
 
-            //int num = 9;
+            StampaArray(numeri);
 
-            //Quadrato(num);
+            int num = 9;
 
-            //ElevaArrayAlQuadrato(numeri);
+            Quadrato(num);
+
+            ElevaArrayAlQuadrato(numeri);
+
+            int[] quadrati = ElevaArrayAlQuadrato(numeri);
 
             SommaElementiArray(numeri);
+
+            SommaElementiArray(quadrati);
         }
 
         //snack 1
@@ -35,8 +40,7 @@ namespace Snacks
 
         //snack 2
         static int Quadrato(int numero)
-        {
-            Console.WriteLine(numero * numero);
+        {;
             return numero * numero;
         }
 
@@ -46,7 +50,7 @@ namespace Snacks
             int[] copiaArray = (int[])array.Clone();
             for (int i = 0; i < copiaArray.Length; i++)
             {
-                copiaArray[i] = copiaArray[i] * copiaArray[i];
+                copiaArray[i] = Quadrato(copiaArray[i]);
             }
             StampaArray(copiaArray);
             StampaArray(array);
@@ -57,13 +61,11 @@ namespace Snacks
 
         static int SommaElementiArray(int[] array)
         {
-            int[] copiaArray = (int[])array.Clone();
             int sum = 0;
-            for (int i = 0; i < copiaArray.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                sum += copiaArray[i];
+                sum += array[i];
             }
-            StampaArray(copiaArray);
             StampaArray(array);
             Console.WriteLine(sum);
             return sum;
